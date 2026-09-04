@@ -1,0 +1,13 @@
+# C++ build artifacts
+*.o
+*.obj
+*.exe
+*.out
+a.out
+/build/
+/dist/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
