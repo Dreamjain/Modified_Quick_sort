@@ -12,7 +12,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build Quick Sort
-        run: g++ -std=c++17 -Wall -Wextra main.cpp -o quicksort
+        run: g++ -std=c++17 -Wall -Wextra -Wpedantic main.cpp -o quicksort
 
-      - name: Run Quick Sort
-        run: ./quicksort
+      - name: Run Quick Sort smoke test
+        run: |
+          output=$(printf '9\n8 4 7 3 9 2 6 5 1\n' | ./quicksort)
+          echo "$output"
+          echo "$output" | grep -F "Sorted array: 1 2 3 4 5 6 7 8 9"
